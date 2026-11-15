@@ -16,6 +16,10 @@ Find Earth locations worth investigating for Moon and Mars mission rehearsals.
 
 For the broader Earth search, run [Discovery_OSEMN.ipynb](Discovery_OSEMN.ipynb) in Kaggle or Colab. It downloads terrain and previews datasets before ranking 384 sampled patches. Internet is required. Earthdata credentials are needed only for protected satellite follow-up. A fixed seed repeats the sample only when inputs and settings are unchanged.
 
+**Test the method:** the Discovery notebook's Model section now benchmarks six published analog regions against matched background patches. It compares combined terrain similarity, slope alone and random ranking, using a separate calibration sample and unchanged coverage thresholds. Results include every site's outcome, geographic limitations and a 2 km sensitivity check. This is a small retrospective terrain-ranking test, not a rover-suitability accuracy claim. The benchmark needs Internet but no secrets.
+
+The notebook includes a clearly labelled recorded run and its audit data: at 1 km, combined terrain outscored 81.6% of matched backgrounds for Moon sites versus 81.8% for slope alone; Mars results were 97.5% versus 73.1%. These are ranking statistics, not prediction accuracy. The Moon test showed no improvement; the Mars advantage is preliminary (four sites across only two broad regions).
+
 Both notebooks bundle their helper code. No extra project files are needed. For local review, run `pip install -r requirements.txt`, then `jupyter lab`. Live Ha’il authentication uses Kaggle Secrets.
 
 **Secrets stay private.** Review mode and the terrain search need no credentials. For live EMIT/MODIS downloads, each runner adds their own NASA Earthdata username and password to Kaggle Secrets using the two names above. Enable access for that notebook. Do not paste credentials into code, outputs, GitHub or the submission form. No CARTO API key or Earthdata token is required by the current notebooks. Clear notebook outputs before sharing a new run if they contain authentication details.

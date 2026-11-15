@@ -54,6 +54,18 @@
 
 ## Evidence scope
 
+### Terrain benchmark sources and limits
+
+- [NASA analog mission profiles (2011)](https://www.nasa.gov/wp-content/uploads/2015/06/563511main_nasa-analog-missions-06-2011_508.pdf): Published terrain/rover-operation purpose for Black Point Lava Flow and Haughton.
+- [Mauna Kea 2010 ILSO-ISRU field campaign](https://ntrs.nasa.gov/api/citations/20110008363/downloads/20110008363.pdf): Lunar mobility-test context and Pu'u Hiwahine field-site coordinates (page 6).
+- [ESA rover trials in Tenerife](https://www.esa.int/Enabling_Support/Space_Engineering_Technology/Rovers_drive_through_Tenerife_darkness): Lunar rover field-operation context at Teide.
+- [NASA/JPL Rocky 7 simulated Mars trek](https://www.jpl.nasa.gov/news/prototype-mars-rover-completes-simulated-mars-trek/): Lavic Lake Mars rover test. The benchmark uses the nearby USGS Pisgah regional centre, not a surveyed Rocky 7 route.
+- [NASA Desert RATS and MDRS context](https://www.nasa.gov/general/nasa-desert-rats-research-and-technology-studies/): Published analog operations and Mars mission simulations at MDRS.
+
+The six-site retrospective benchmark uses the same terrain formula with separate normalization: 88 QA-valid, non-overlapping calibration patches retained from the original 96-patch pilot. Backgrounds come from the fresh search and are matched by broad surface-cover group and absolute latitude, without matching on terrain scores. The checked run retained 224 eligible background patches before per-site matching. Both calibration and background sets exclude known regions and cannot overlap. Known-site labels never fit the score. Known-site terrain and WorldCover windows mosaic intersecting tiles; the 95% coverage requirements are unchanged.
+
+Four site cases are evaluated per planet; Black Point and Haughton participate in both tests. The primary 1 km result showed no combined-score gain for Moon sites and a descriptive gain for Mars sites. Mars cases span only two broad regions, and the 2 km sensitivity check changes the effect size. These are retrieval statistics against unlabelled backgrounds, not accuracy on confirmed negatives. Published analog uses are not ground-truth labels for the exact lunar south-pole or Jezero reference patch. The notebook bundles a labelled recorded-run snapshot with inputs, provenance and audit results. Changing settings or inputs requires a new run; future tuning needs untouched test sites.
+
 
 
 The search sampled 384 geographically stratified Earth patches with fixed seed 20261114. The sample is reproducible with unchanged inputs, but is not an exhaustive or area-weighted global search. A 100 km buffer around a 41-site registry excluded listed analogs; the registry is incomplete and cannot establish novelty.
