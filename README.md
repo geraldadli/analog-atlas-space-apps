@@ -1,49 +1,29 @@
-# Analog Atlas: Jakarta 2026
+# Analog Atlas
+**Moon Base Rocket Science — Gerald Adli (solo)**
+NASA Space Apps Jakarta 2026
 
-**Moon Base Rocket Science** — Gerald Adli (solo)
+Find Earth locations worth investigating for Moon and Mars mission rehearsals.
 
-**Challenge:** Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars
-
-[Open the six-slide demo](Analog_Atlas_Jakarta_Demo.pdf)
-
-Analog Atlas is a Python notebook and mapping workflow that identifies Earth locations worth investigating as rehearsal sites for Moon and Mars missions. Using the OSEMN framework, it compares Earth terrain with lunar south-pole and Martian Jezero reference patches, excludes listed analog sites, and checks shortlisted locations using satellite observations and published research. Our pilot sampled 384 Earth patches. Follow-up analysis identified Area A in Ha'il, Saudi Arabia, where hematite and montmorillonite clay spectral signatures recur on nine qualifying observation dates. The result is a candidate for investigating how rovers explore rocky terrain and select sampling locations. It is not yet a validated rover course or a confirmed new analog. By separating measured evidence from missing field tests, Analog Atlas helps teams decide where to investigate and what to measure before planning a mission rehearsal.
-
-## Explore the project
-
-- [Download the notebooks and evidence package](Analog_Atlas_Jakarta_Project.zip)
-- [Sources, software and scientific limits](SOURCES_Jakarta.md)
-- [Speaking script](SPEAKING_SCRIPT_Jakarta.txt)
-
-The package contains the OSEMN discovery notebook, the 16-granule Ha’il follow-up notebook, source links, saved validation summaries and actual maps. The result can be inspected without registration. Re-running protected Earthdata downloads requires your own Earthdata account; credentials belong in Kaggle Secrets. This is a publication copy, not a new satellite run.
+**Challenge:** Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars.
 
 ## Demo
+[Open the 7-slide presentation](demo.pdf)
 
-### 1. Project and challenge
+## Try it
+1. Download [Hail_Investigation_OSEMN.ipynb](Hail_Investigation_OSEMN.ipynb) and open it in Kaggle.
+2. Run all cells. The default `RUN_HAIL_16 = False` shows saved evidence and the reviewed Area A result without Earthdata credentials. This is review mode, not a fresh satellite run.
+3. To reproduce the 16-granule extraction, enable Internet, add `EARTHDATA_USERNAME` and `EARTHDATA_PASSWORD` to Kaggle Secrets, enable both secrets for the notebook, and set `RUN_HAIL_16 = True`. Allow several GB of downloads. Quality masks remain unchanged.
 
-![Project and challenge](jakarta-slide-1.png)
+For the broader Earth search, run [Discovery_OSEMN.ipynb](Discovery_OSEMN.ipynb) in Kaggle or Colab. It downloads terrain and previews datasets before ranking 384 sampled patches. Internet is required. Earthdata credentials are needed only for protected satellite follow-up. A fixed seed repeats the sample only when inputs and settings are unchanged.
 
-### 2. Method: OSEMN
+Both notebooks bundle their helper code. No extra project files are needed. For local review, run `pip install -r requirements.txt`, then `jupyter lab`. Live Ha’il authentication uses Kaggle Secrets.
 
-![Method: OSEMN](jakarta-slide-2.png)
+## Result
+Area A in Ha’il, Saudi Arabia, has hematite and montmorillonite spectral signatures on 9 qualifying dates. Across the wider study area, 14 of 16 EMIT files passed the scene screen. The other two failed coverage or clear-pixel requirements.
 
-### 3. Candidate and evidence
+Area A is a candidate for field investigation, not a validated rover course. Minerals, access, small obstacles and traction need field checks. Regional research exists; exact-site novelty is unproven. Terrain scores are resemblance scores, not suitability probabilities.
 
-![Candidate and evidence](jakarta-slide-3.png)
+## Data and disclosure
+[Sources and scientific limits](SOURCES.md)
 
-### 4. Repeat mineral signals
-
-![Repeat mineral signals](jakarta-slide-4.png)
-
-### 5. Terrain and limitations
-
-![Terrain and limitations](jakarta-slide-5.png)
-
-### 6. Next steps
-
-![Next steps](jakarta-slide-6.png)
-
-## SI disclosure
-
-OpenAI Codex assisted with Python code, debugging, data-analysis workflows, literature-search support, interpretation drafts, documentation and presentation layout/text. Satellite images and source measurements come from the cited agencies and providers, not generative imagery. Derived maps and summaries were calculated by SI-assisted code. Presentation slides visibly disclose SI-generated layout/text. Shared notebooks and the project provenance metadata acknowledge SI assistance. Independent checks reconstructed the uploaded derived repeat-detection results; raw EMIT NetCDF quality masks were not reprocessed during that validation. Field confirmation remains outstanding.
-
-The earlier [Kansas City deck](Analog_Atlas_Kansas_City_Demo.pdf) is retained as an archive. The current submission materials focus on Jakarta. Public hosting does not establish event registration or submission eligibility.
+NASA LOLA, MOLA, EMIT and MODIS support the analysis, alongside Copernicus terrain and imagery. OpenAI Codex assisted with code, analysis, documentation and presentation layout. Satellite images are observed data. Derived results are calculations from SI-assisted code, not synthetic measurements. Notebook metadata records this assistance.
