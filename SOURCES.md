@@ -48,7 +48,8 @@
 - [GitHub](https://github.com/): Public project hosting.
 - [OpenAI Codex](https://openai.com/codex/): SI assistance with code, analysis, text and slide preparation.
 - [ReportLab](https://www.reportlab.com/): PDF packaging.
-- [pypdf](https://pypdf.readthedocs.io/): PDF inspection.
+- [pypdf](https://pypdf.readthedocs.io/): PDF inspection and compression.
+- [Pillow](https://python-pillow.github.io/): Image resizing for PDF compression.
 - [Poppler](https://poppler.freedesktop.org/): PDF rendering for review.
 
 ## Evidence scope

@@ -18,6 +18,8 @@ For the broader Earth search, run [Discovery_OSEMN.ipynb](Discovery_OSEMN.ipynb)
 
 Both notebooks bundle their helper code. No extra project files are needed. For local review, run `pip install -r requirements.txt`, then `jupyter lab`. Live Ha’il authentication uses Kaggle Secrets.
 
+**Secrets stay private.** Review mode and the terrain search need no credentials. For live EMIT/MODIS downloads, each runner adds their own NASA Earthdata username and password to Kaggle Secrets using the two names above. Enable access for that notebook. Do not paste credentials into code, outputs, GitHub or the submission form. No CARTO API key or Earthdata token is required by the current notebooks. Clear notebook outputs before sharing a new run if they contain authentication details.
+
 ## Result
 Area A in Ha’il, Saudi Arabia, has hematite and montmorillonite spectral signatures on 9 qualifying dates. Across the wider study area, 14 of 16 EMIT files passed the scene screen. The other two failed coverage or clear-pixel requirements.
 
